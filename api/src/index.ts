@@ -9,11 +9,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/order", orderRouter);
-app.use("/trades", tradesRouter);
-app.use("/kline", klineRouter);
-app.use("/ticker", tickerRouter);
-app.use("/depth", depthRouter);
+app.use("api/v1/order", orderRouter);
+app.use("api/v1/trades", tradesRouter);
+app.use("api/v1/kline", klineRouter);
+app.use("api/v1/ticker", tickerRouter);
+app.use("api/v1/depth", depthRouter);
 
 app.listen(3000, () => {
   console.log("server is running on port 3000");
