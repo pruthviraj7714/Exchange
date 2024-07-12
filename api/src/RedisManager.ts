@@ -10,7 +10,6 @@ export class RedisManager {
     this.publisher = createClient();
     this.client.connect();
     this.publisher.connect();
-    
   }
 
   public static getInstance(): RedisManager {
@@ -20,7 +19,7 @@ export class RedisManager {
     return RedisManager.instance;
   }
 
-  sendAndAwait(message: any) {
+  public sendAndAwait(message: any) {
     return new Promise<any>((resolve) => {
       const id = this.getRandomClientId();
       this.client.subscribe(id, (message) => {
